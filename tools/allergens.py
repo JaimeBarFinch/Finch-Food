@@ -9,47 +9,43 @@
 #   - `open=True` = the kitchen has not confirmed the full list for this dish ("confirm with kitchen",
 #     "confirm full current matrix", or no allergen line at all). The app then shows EVERY allergen
 #     that is not in `contains` as "not confirmed" for that dish.
-#   - The build checks `raw` against `contains` + `maybe`, so the two cannot drift apart.
+#   - `no` = allergens the kitchen has said in writing are NOT in the dish, where an earlier document listed them.
+#     Quote the kitchen's words in `raw`. Never add to `no` on anyone else's say-so.
+#   - The build checks `raw` against `contains` + `maybe` + `no`, so they cannot drift apart.
 #
 # Allergen keys (the 14 UK allergens):
 #   celery gluten crustaceans eggs fish lupin milk molluscs mustard nuts peanuts sesame soya sulphites
 
+# Allergen lists come from the Food Bible PDF (November 2026). The later description sheet (a Word file, also
+# November 2026) has no allergen lines, so dishes that appear only on that sheet are open=True with no list.
 SOURCE = 'Bar Finch Food Bible'
 SOURCE_DATE = 'November 2026'
 
 A = {
-    # ---- bar snacks / small plates
+    # ---- bar snacks
+    'caviar': dict(raw='', contains=[], open=True),          # description sheet only: no allergen line
+    # ---- starters
     'reuben': dict(raw='Milk/dairy, sulphites, gluten, egg, mustard.',
                    contains=['milk', 'sulphites', 'gluten', 'eggs', 'mustard']),
-    # ---- starters
     'tartare': dict(raw='Fish, egg, mustard, gluten; soy and sulphites may apply from the cure/condiments - confirm against the live allergen matrix.',
                     contains=['fish', 'eggs', 'mustard', 'gluten'], maybe=['soya', 'sulphites']),
     'crabcakes': dict(raw='Shellfish/crustaceans, egg, mustard, milk and gluten.',
                       contains=['crustaceans', 'eggs', 'mustard', 'milk', 'gluten']),
-    'tomatosalad': dict(raw='Mustard, sulphites.',
-                        contains=['mustard', 'sulphites']),
-    # ---- salads
-    'choppedsalad': dict(raw='Sulphites.',
-                         contains=['sulphites']),
+    'artichoke': dict(raw='', contains=[], open=True),       # description sheet only: no allergen line
+    'lobster': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
+    'souffle': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
     'caesar': dict(raw='Fish, milk, egg, mustard, gluten, sulphites.',
                    contains=['fish', 'milk', 'eggs', 'mustard', 'gluten', 'sulphites']),
-    'tuna': dict(raw='Fish, sulphites, (may include gluten later, tbc)',
-                 contains=['fish', 'sulphites'], maybe=['gluten']),
     # ---- mains
     'trout': dict(raw='Fish; sulphites may apply from capers - confirm current matrix.',
                   contains=['fish'], maybe=['sulphites']),
-    'langoustines': dict(raw='Crustaceans, milk, sulphites; soy.',
-                         contains=['crustaceans', 'milk', 'sulphites', 'soya']),
-    'hamburger': dict(raw='Gluten, milk, mustard, egg; sulphites.',
-                      contains=['gluten', 'milk', 'mustard', 'eggs', 'sulphites']),
-    'roastchicken': dict(raw='Confirm with kitchen; honey is not one of the UK 14 declarable allergens.',
-                         contains=[], open=True),
+    'hamburger': dict(raw='Gluten, milk, mustard, egg; sulphites. The kitchen\'s later description sheet says: DOES NOT CONTAIN EGG.',
+                      contains=['gluten', 'milk', 'mustard', 'sulphites'], no=['eggs']),
+    'potpie': dict(raw='', contains=[], open=True),          # description sheet only: no allergen line
     'steakfrites': dict(raw='Milk.',
                         contains=['milk']),
     'piccata': dict(raw='Milk and sulphites.',
                     contains=['milk', 'sulphites']),
-    'melanzane': dict(raw='Milk',
-                      contains=['milk']),
     'schnitzel': dict(raw='Gluten and egg likely from schnitzel coating; confirm full current matrix.',
                       contains=[], maybe=['gluten', 'eggs'], open=True),
     # ---- sides
@@ -90,16 +86,34 @@ A = {
 #   - if the allergen applies, add it to `contains` above and delete the question;
 #   - if it does not, keep the question's line but start the note with 'KITCHEN CONFIRMED NO:' and the date.
 QUERIES = {
+    'caviar': [
+        ('fish', 'Caviar is sturgeon roe.'),
+        ('milk', 'Served with crème fraîche.'),
+    ],
+    'artichoke': [
+        ('nuts', 'Dressed with a walnut mole.'),
+        ('sesame', 'Finished with sesame oil.'),
+    ],
+    'lobster': [
+        ('crustaceans', 'The dish is lobster.'),
+        ('milk', 'The kitchen\'s notes mention monté au beurre, a butter sauce.'),
+    ],
+    'souffle': [
+        ('milk', 'Made with butter and Parmesan, with a béchamel-style sauce.'),
+        ('gluten', 'The roux is made with flour.'),
+        ('eggs', 'A soufflé is normally made with egg.'),
+    ],
+    'potpie': [
+        ('gluten', 'Topped with puff pastry.'),
+        ('milk', 'Puff pastry is made with butter.'),
+        ('nuts', 'The filling has chestnuts.'),
+    ],
     'steakfrites': [
         ('sulphites', 'Served with fries, and the fries entry lists sulphites.'),
         ('eggs', 'Mayonnaise is offered on request.'),
     ],
     'fries': [
         ('eggs', 'Mayonnaise is offered with the fries.'),
-    ],
-    'melanzane': [
-        ('mustard', 'Served with the mixed leaf salad, and that entry lists mustard.'),
-        ('sulphites', 'Served with the mixed leaf salad, whose house dressing includes sherry.'),
     ],
     'mixedleaf': [
         ('sulphites', 'The house dressing is described as mustard, lemon, sherry and olive oil.'),
