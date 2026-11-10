@@ -64,11 +64,18 @@ COURSES = [
   # =====================================================================================================
   dict(id='menu', title='Know the menu', blurb='Every dish, section by section: what is on the plate and what to say about it.', lessons=[
     dict(id='snacks', title='Snacks and starters', cards=[
+      ('Oscietra caviar', '{d:caviar}: 30 g of Oscietra caviar with crème fraîche and chives. Oscietra is a variety of sturgeon caviar with a delicate, nutty flavour. One caviar spoon per table for up to four guests, two for more than four.'),
       ('The Reuben', '{d:reuben}: pulled pastrami, made from beef brisket, and Emmental in multigrain sourdough toasted in beef fat. It is served over fennel kraut dressed with Thousand Island.'),
       ('Longhorn rump tartare', '{d:tartare}: rump (picanha), seared, chilled and finely diced, mixed with capers, shallots, Dijon mustard, cornichons, olive oil, anchovies and chilli crisp. Finished with a herb salad and an egg yolk cured in soy and mirin. Game chips on the side.'),
       ('Dorset crab cakes', '{d:crabcakes}: brown and white crab meat with herbs, on a dry mashed-potato base. Served with preserved-lemon tartare sauce and a herb salad.'),
+      ('Artichoke salad', '{d:artichoke}: Jerusalem artichokes, halved and roasted, dressed with walnut mole on a bed of black garlic purée. Mixed with Castelfranco, a lightly bitter Italian chicory, and finished with artichoke crisps and sesame oil.'),
+      ('Thermidor lobster', '{d:lobster}: half or whole. The meat is carved out and put back in the shell. The kitchen has not yet written up the sauce, so ask before you describe it.'),
+      ('Parmesan soufflé', '{d:souffle}: a roux-based soufflé with Parmesan and fresh truffle, finished with a béchamel-style sauce with more Parmesan and truffle. Double-baked: cooked once, then baked again for service.'),
       ('Tomato salad', '{d:tomatosalad}: seasonal tomatoes and shallots in the house sherry-vinegar dressing. Bright, juicy and lightly sharp.'),
     ], quiz=[
+      ('How many caviar spoons go down for a table of four?', ['One', 'Two', 'Four', 'None'], 0, 'One spoon per table for up to four guests, two for more than four.'),
+      ('What are the artichokes in the artichoke salad dressed with?', ['Walnut mole', 'House dressing', 'Caesar dressing', 'Brown butter'], 0, 'A walnut mole, on a bed of black garlic purée.'),
+      ('What does “double-baked” mean for the soufflé?', ['Cooked once, then baked again for service', 'Baked at twice the heat', 'Two soufflés per portion', 'Baked in two layers'], 0, 'It is cooked once, then baked again for service.'),
       ('What is the Reuben’s bread toasted in?', ['Beef fat', 'Brown butter', 'Olive oil', 'Clarified butter'], 0, 'Beef fat. Worth knowing for a guest who does not eat beef.'),
       ('What comes on the side of the tartare?', ['Game chips', 'Fries', 'Focaccia croutons', 'Sourdough'], 0, 'Game chips: thin slices of potato, fried until crisp.'),
       ('What is the base of the crab cakes?', ['Dry mashed potato', 'Rice', 'Polenta', 'Chickpeas'], 0, 'Dry mashed potato binds the crab and herbs.'),
@@ -83,20 +90,22 @@ COURSES = [
       ('Which salad comes with chicken?', ['{d:caesar}', '{d:choppedsalad}', '{d:tomatosalad}', '{d:mixedleaf}'], 0, 'The Bar Finch Caesar is a chicken Caesar.'),
       ('What are the Caesar’s croutons made from?', ['Focaccia', 'Sourdough', 'Potato bun', 'Ladyfingers'], 0, 'Focaccia croutons.'),
       ('What is the tuna served on?', ['Pomodoro sauce', 'Fennel kraut', 'Tartare sauce', 'Mixed leaves'], 0, 'A tomato sauce seasoned with sherry vinegar, salt and pepper.'),
-      ('What finishes the smoked trout?', ['Dill, parsley, crisp capers and lemon zest', 'Basil, chive and parsley', 'Tarragon, chives and parsley', 'Capers, anchovies and parsley'], 0, 'Dill, parsley, capers fried until crunchy, and lemon zest.'),
+      ('What finishes the smoked trout?', ['Dill, parsley, crisp capers and lemon zest', 'Basil, chive and parsley', 'Tarragon and parsley', 'Capers, anchovies and parsley'], 0, 'Dill, parsley, capers fried until crunchy, and lemon zest.'),
       ('The chopped salad’s dressing is…', ['Confit garlic and lemon', 'Sherry vinegar and shallot', 'Caesar', 'Thousand Island'], 0, 'Garlic cooked slowly until soft and mellow, with lemon.'),
     ]),
     dict(id='mains', title='Mains', cards=[
       ('Grilled langoustines', '{d:langoustines}: three langoustines, halved and grilled, with a buttery prawn monte. The sauce is made with prawns, vegetable stock, white wine, butter, preserved lemon, shio koji and shallots.'),
       ('Bar Finch hamburger', '{d:hamburger}: aged beef, a blend of rib cap and chuck, seared in beef fat. In a potato bun with American cheese, slow-cooked onions, pickles, ketchup and American mustard.'),
+      ('Chicken pot pie', '{d:potpie}: topped with puff pastry and filled with a rich, reduced chicken stock with chestnuts and carrots. It takes 25 minutes, so tell the guest when you take the order.'),
       ('Roast chicken', '{d:roastchicken}: brined in honey, salt, spices and water, roasted until golden and served with chicken gravy. Half or whole.'),
-      ('Steak frites', '{d:steakfrites}: 40-day-aged steak cooked in beef fat, finished with herb-infused brown butter and smoked bone-marrow butter. Served with fries. Cooked pink or well done.'),
+      ('Steak frites', '{d:steakfrites}: 40-day-aged ribeye cooked in beef fat, finished with herb-infused brown butter and smoked bone-marrow butter. Served with fries. Cooked pink or well done.'),
       ('Chicken piccata', '{d:piccata}: poussin, pan-roasted and finished in the oven, with a reduction of roasted chicken stock and wine, capers and parsley.'),
       ('Melanzane alla parmigiana', '{d:melanzane}: baked aubergine layered with tomato and cheese until soft, rich and browned on top. A mixed leaf salad comes on the side.'),
       ('Mangalitsa pork schnitzel', '{d:schnitzel}: a Mangalitsa pork chop, brined in honey, sugar, soy and salt, cooked schnitzel-style and served with a fresh fennel salad.'),
     ], quiz=[
       ('How many langoustines are in a portion?', ['Three', 'Two', 'Four', 'Six'], 0, 'Three, halved and grilled.'),
       ('Which two cuts are in the hamburger?', ['Rib cap and chuck', 'Rump and brisket', 'Picanha and chuck', 'Brisket and rib cap'], 0, 'Aged rib cap and chuck, seared in beef fat.'),
+      ('How long does the chicken pot pie take?', ['25 minutes', '10 minutes', '15 minutes', '45 minutes'], 0, 'Twenty-five minutes. Tell the guest when you take the order.'),
       ('How can the roast chicken be ordered?', ['Half or whole', 'Whole only', 'Half only', 'By the leg or the breast'], 0, 'Ask the guest: half or whole.'),
       ('What do you ask a guest who orders the steak frites?', ['Pink or well done', 'Half or whole', 'With or without the bone', 'Grilled or fried'], 0, 'The steak is cooked pink or well done.'),
       ('What is a poussin?', ['A young chicken', 'A small langoustine', 'A cut of pork', 'A kind of caper'], 0, 'A young chicken. Ours is pan-roasted and finished in the oven.'),
@@ -105,15 +114,15 @@ COURSES = [
     ]),
     dict(id='sides', title='Sides and sauces', cards=[
       ('Fries and mash', '{d:fries}: soaked overnight in vinegar, served crisp and golden. {d:mash}: smooth and rich, made with reduced double cream and butter.'),
-      ('The green sides', '{d:sweetheart}: sweetheart cabbage, refreshed until crisp and dressed with olive oil, lemon juice, salt and pepper. {d:mixedleaf}: soft leaves in the house dressing. {d:greensbeans}: green beans and spinach, blanched and warmed in a butter emulsion.'),
-      ('Béarnaise', '{d:bearnaise}: egg yolks and clarified butter, emulsified with a reduction of white wine vinegar and herbs: tarragon, chives and parsley.'),
+      ('The green sides', '{d:sweetheart}: sweetheart cabbage, refreshed until crisp and dressed with olive oil, lemon juice, salt and pepper. {d:mixedleaf}: soft leaves in the house dressing, finished with mint, parsley and dill. {d:greensbeans}: green beans and spinach, blanched and warmed in a butter emulsion.'),
+      ('Béarnaise', '{d:bearnaise}: egg yolks and clarified butter, emulsified with a reduction of white wine vinegar and herbs: tarragon and parsley.'),
       ('Peppercorn sauce', '{d:peppercorn}: made from the pan flavours and crushed peppercorns, deglazed with brandy and port.'),
       ('Holstein sauce', '{d:holstein}: brown butter with capers, anchovies and parsley. Savoury, nutty and bright.'),
     ], quiz=[
       ('What are the fries soaked in overnight?', ['Vinegar', 'Brine', 'Milk', 'Beef fat'], 0, 'Vinegar.'),
       ('Which sauce is brown butter with capers, anchovies and parsley?', ['Holstein', 'Béarnaise', 'Peppercorn', 'Thousand Island'], 0, 'Holstein.'),
       ('What is the peppercorn sauce deglazed with?', ['Brandy and port', 'White wine', 'Marsala', 'Sherry vinegar'], 0, 'Brandy and port.'),
-      ('Which herbs are in the Béarnaise?', ['Tarragon, chives and parsley', 'Basil, chive and parsley', 'Dill and parsley', 'Rosemary and thyme'], 0, 'Tarragon, chives and parsley.'),
+      ('Which herbs are in the Béarnaise?', ['Tarragon and parsley', 'Basil, chive and parsley', 'Mint, parsley and dill', 'Rosemary and thyme'], 0, 'Tarragon and parsley. Mint, parsley and dill finish the mixed leaf salad.'),
       ('“Greens & beans” is…', ['Green beans and spinach', 'Sweetheart cabbage and peas', 'Broad beans and kale', 'Mixed leaves and fennel'], 0, 'Green beans and spinach in a butter emulsion.'),
     ]),
     dict(id='desserts', title='Desserts', cards=[
@@ -130,11 +139,13 @@ COURSES = [
       ('What is the base of the lemon meringue pie?', ['A blond cake base', 'Shortcrust pastry', 'Ladyfingers', 'A biscuit crumb'], 0, 'The custard is set over a traditional blond cake base.'),
     ]),
     dict(id='table', title='At the table', cards=[
-      ('Portions', 'Langoustines: three. Beignets: three pieces. Roast chicken: half or whole.'),
-      ('Questions to ask', 'Steak: pink or well done. Roast chicken: half or whole. Fries: ketchup, mayonnaise or both. Ketchup and mayonnaise are also available with the steak frites on request.'),
+      ('Portions', 'Caviar: 30 g. Langoustines: three. Beignets: three pieces. Roast chicken and Thermidor lobster: half or whole.'),
+      ('Questions to ask', 'Steak: pink or well done. Roast chicken and lobster: half or whole. Fries: ketchup, mayonnaise or both. The chicken pot pie takes 25 minutes: say so when you take the order. Ketchup and mayonnaise are also available with the steak frites on request.'),
       ('Cutlery: mains and sides', 'Steak frites: steak knife and fork. Schnitzel: steak knife and main fork. Mash: a pasta spoon. Mixed leaf salad and greens & beans: a starter fork.'),
+      ('Caviar spoons', 'One caviar spoon per table for up to four guests, two for more than four. The spoons never go to the kitchen porters. Wash them carefully by hand and put them back in their drawer.'),
       ('Cutlery: desserts', 'Every dessert takes a dessert spoon. The tiramisu, the lemon meringue pie and the beignets also take a starter fork. The cremoso and the semifreddo are spoon only.'),
     ], quiz=[
+      ('What happens to a caviar spoon after service?', ['It is washed by hand and returned to its drawer', 'It goes to the kitchen porters with the cutlery', 'It is thrown away', 'It stays on the table'], 0, 'Caviar spoons are washed carefully by hand and put back in their drawer.'),
       ('What goes down with the mash?', ['A pasta spoon', 'A starter fork', 'A dessert spoon', 'A steak knife'], 0, 'A pasta spoon.'),
       ('Which desserts take a dessert spoon only?', ['Chocolate cremoso and semifreddo', 'Tiramisu and beignet', 'Lemon meringue pie and tiramisu', 'Beignet and semifreddo'], 0, 'The other three also take a starter fork.'),
       ('What do you offer with fries?', ['Ketchup, mayonnaise or both', 'Béarnaise', 'American mustard', 'Tartare sauce'], 0, 'Ask if they would like ketchup, mayonnaise or both.'),
@@ -184,7 +195,7 @@ COURSES = [
       ('Longhorn and picanha', 'The {d:tartare} is made with Longhorn rump. Longhorn is a traditional English breed of beef cattle. Picanha is the rump cap.'),
       ('Brisket and pastrami', 'Pastrami is seasoned, cured beef. Ours, in the {d:reuben}, is made from brisket and pulled.'),
       ('Rib cap and chuck', 'The {d:hamburger} is aged beef, a blend of rib cap and chuck. Rib cap is the highly marbled outer muscle of the rib. Chuck is a flavourful cut from the shoulder.'),
-      ('The steak', 'The steak in the {d:steakfrites} is aged for 40 days. Dry-aged beef is matured under controlled conditions to intensify its flavour. It is cooked in beef fat and finished with herb-infused brown butter and smoked bone-marrow butter. Bone marrow is the rich centre of beef bones.'),
+      ('The steak', 'The steak in the {d:steakfrites} is ribeye, aged for 40 days. Dry-aged beef is matured under controlled conditions to intensify its flavour. It is cooked in beef fat and finished with herb-infused brown butter and smoked bone-marrow butter. Bone marrow is the rich centre of beef bones.'),
       ('Beef fat', 'Beef fat is used to toast the bread for the {d:reuben}, to sear the {d:hamburger} and to cook the steak. Remember it for guests who do not eat beef.'),
     ], quiz=[
       ('Picanha is…', ['The rump cap', 'The shoulder', 'The brisket', 'The outer muscle of the rib'], 0, 'The rump cap, used for the tartare.'),
@@ -196,7 +207,8 @@ COURSES = [
     dict(id='where', title='Where the dishes come from', cards=[
       ('Spain', 'Sherry vinegar, in the house dressing, is a Spanish wine vinegar.'),
       ('Italy', '{d:melanzane} means aubergines “alla parmigiana”: layered and baked with tomato and cheese. Piccata, pomodoro, {d:tiramisu} (“pick me up”), {d:semifreddo} (“half cold”) and cremoso are Italian too, as are mascarpone, datterini tomatoes and marsala.'),
-      ('France', '{d:bearnaise}, frites, {d:beignet}, poussin and cornichons are French words. A beignet is a French fried pastry or doughnut.'),
+      ('France', '{d:bearnaise}, frites, {d:beignet}, poussin and cornichons are French words. A beignet is a French fried pastry or doughnut. Thermidor, soufflé, béchamel and roux are French too.'),
+      ('Mexico', 'Mole is a Mexican-style sauce or paste, traditionally made by blending chillies, spices, seeds or nuts. Ours, in the {d:artichoke}, is a walnut mole.'),
       ('America', 'The {d:reuben}, with its pastrami and Thousand Island, and the {d:hamburger}, with American cheese and American mustard in a potato bun.'),
       ('Central Europe', 'A schnitzel is meat coated in crumbs and fried. Mangalitsa is a heritage Hungarian pig breed. Emmental is a Swiss-style cheese.'),
       ('Japan', 'Sashimi is a Japanese way of serving fish. Mirin is a sweet Japanese rice seasoning and shio koji a fermented rice seasoning.'),
@@ -225,8 +237,8 @@ COURSES = [
     ]),
     dict(id='read', title='Reading the guest', cards=[
       ('Ask before you suggest', 'Two questions do most of the work: <b>how hungry are you?</b> and <b>is there anything you don’t eat?</b> Then offer one or two dishes, not five.'),
-      ('Light or rich', 'Light: the {d:tomatosalad}, the {d:choppedsalad}, the {d:tuna} and the {d:trout}. Rich: the {d:reuben}, the {d:hamburger}, the {d:steakfrites} and the {d:melanzane}.'),
-      ('For the table', 'The {d:langoustines} and the {d:beignet} come in pieces, so they share easily. The {d:roastchicken} can be ordered whole.'),
+      ('Light or rich', 'Light: the {d:tomatosalad}, the {d:choppedsalad}, the {d:tuna} and the {d:trout}. Rich: the {d:souffle}, the {d:reuben}, the {d:hamburger}, the {d:steakfrites} and the {d:melanzane}.'),
+      ('For the table', 'The {d:caviar} is for the table. The {d:langoustines} and the {d:beignet} come in pieces, so they share easily. The {d:roastchicken} and the {d:lobster} can be ordered whole.'),
       ('Sides and sauces', 'When a guest orders a main, mention a side. With the steak, mention the sauces: {d:bearnaise}, {d:peppercorn} or {d:holstein}.'),
       ('Changes', 'The Food Bible does not say what can and cannot be changed. Do not promise a change: ask the kitchen first.'),
       ('The Guests tab', 'In Info, the Guests tab lists what guests commonly say and what to offer.'),

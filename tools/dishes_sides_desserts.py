@@ -12,8 +12,8 @@ D = {
         plate='Sweetheart cabbage, refreshed until crisp and dressed with olive oil, lemon juice, salt and pepper.',
         terms=['Sweetheart cabbage']),
     'mixedleaf': dict(section='sides', name='Mixed leaf salad', short='Mixed leaf salad',
-        sell='Soft mixed leaves in the house dressing: a fresh, light side.',
-        plate='Mixed soft leaves dressed with the house dressing.',
+        sell='Soft mixed leaves in the house dressing, finished with mint, parsley and dill.',
+        plate='Mixed soft leaves dressed with the house dressing and finished with mint, parsley and dill.',
         service='Starter fork.',
         terms=['House dressing']),
     'mash': dict(section='sides', name='Mash potato', short='Mash',
@@ -28,8 +28,8 @@ D = {
 
     # ------------------------------------------------------------ sauces
     'bearnaise': dict(section='sauces', name='Béarnaise', short='Béarnaise',
-        sell='Egg yolk and butter sauce with tarragon, chives and parsley.',
-        plate='Egg yolks and clarified butter, emulsified with a reduction of white wine vinegar and herbs: tarragon, chives and parsley.',
+        sell='Egg yolk and butter sauce with tarragon and parsley.',
+        plate='Egg yolks and clarified butter, emulsified with a reduction of white wine vinegar and herbs: tarragon and parsley.',
         terms=['Emulsion', 'Clarified butter', 'Reduction']),
     'peppercorn': dict(section='sauces', name='Peppercorn sauce', short='Peppercorn sauce',
         sell='A rich peppercorn sauce finished with brandy and port.',
