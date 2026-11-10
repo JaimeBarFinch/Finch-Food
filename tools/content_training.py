@@ -88,7 +88,7 @@ COURSES = [
     ]),
     dict(id='mains', title='Mains', cards=[
       ('Bar Finch hamburger', '{d:hamburger}: aged beef, a blend of rib cap and chuck, seared in beef fat. In a potato bun with American cheese, slow-cooked onions, pickles, ketchup and American mustard.'),
-      ('Chicken pot pie', '{d:potpie}: topped with puff pastry and filled with a rich, reduced chicken stock with chestnuts and carrots. It takes 25 minutes, so tell the guest when you take the order.'),
+      ('Chicken pot pie', '{d:potpie}: topped with puff pastry and filled with a rich, reduced chicken stock with chestnut mushrooms and carrots. It takes 25 minutes, so tell the guest when you take the order.'),
       ('Steak frites', '{d:steakfrites}: 40-day-aged ribeye cooked in beef fat, finished with herb-infused brown butter and smoked bone-marrow butter. Served with fries. Cooked pink or well done.'),
       ('Chicken piccata', '{d:piccata}: poussin, pan-roasted and finished in the oven, with a reduction of roasted chicken stock and wine, capers and parsley.'),
       ('Mangalitsa pork schnitzel', '{d:schnitzel}: a Mangalitsa pork chop, brined in honey, sugar, soy and salt, cooked schnitzel-style and served with a fresh fennel salad.'),

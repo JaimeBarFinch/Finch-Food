@@ -137,7 +137,7 @@
     var a = listState.a, tags = '';
     if (a && cell(d, a) === 'q') tags = '<span class="badge check">' + esc(AL[a].short) + ' not confirmed</span>';
     else if (!a && unsure(d)) tags = '<span class="badge check">Allergens not fully confirmed</span>';
-    var listed = d.al.has.length ? 'Lists: <b>' + esc(shortList(d.al.has)) + '</b>' : 'No allergen list confirmed';
+    var listed = d.al.has.length ? 'Lists: <b>' + esc(shortList(d.al.has)) + '</b>' : (d.al.none ? 'Lists: <b>none of the 14 allergens</b>' : 'No allergen list confirmed');
     return '<li><a class="wrow' + (tags ? ' is-check' : '') + '" href="' + dishHref(d.id) + '"><span class="nm">' + esc(d.name) + '</span>' +
       '<span class="ap">' + listed + '</span>' + (tags ? '<span class="tags">' + tags + '</span>' : '') + '</a></li>';
   }
@@ -196,6 +196,7 @@
         return '<a class="al" href="#info-allergens-' + k + '">' + esc(AL[k].label) + '</a>';
       }).join('') + '</div>';
     }
+    if (d.al.none) out += '<div class="lbl">Listed for this dish</div><p style="margin:0">The kitchen lists none of the 14 allergens for this dish.</p>';
     if (q.length) {
       out += '<div class="lbl">Not confirmed: ask the kitchen</div><div class="als">' + q.map(function (k) {
         return '<a class="al q" href="#info-allergens-' + k + '">' + esc(AL[k].label) + ' ?</a>';
@@ -204,8 +205,8 @@
     if (d.al.open) {
       out += '<p class="open"><b>The Food Bible has no confirmed allergen list for this dish.</b> Treat every allergen as possible until the kitchen confirms.</p>';
     }
-    out += '<p class="rule">' + esc(RULE) + '</p><p class="src">' + esc(SRC) + (d.al.has.length && !d.al.open ? ' Anything not shown here is not listed, which is not the same as “free from”.' : '') + '</p>' +
-      '<details><summary>What the Food Bible says</summary><p>' + (d.al.raw ? '“' + esc(d.al.raw) + '”' : 'There is no allergen line for this dish.') + '</p></details></div>';
+    out += '<p class="rule">' + esc(RULE) + '</p><p class="src">' + esc(SRC) + (!d.al.open ? ' Anything not shown here is not listed, which is not the same as “free from”.' : '') + '</p>' +
+      '<details><summary>What the kitchen says</summary><p>' + (d.al.raw ? '“' + esc(d.al.raw) + '”' : 'There is no allergen line for this dish.') + '</p></details></div>';
     return out;
   }
   function dishPage(id) {
@@ -691,7 +692,7 @@
     if (c.kind === 'al') {
       var q = namedQ(d);
       return '<span class="eyebrow">' + esc(d.short) + '</span>' +
-        '<span class="row"><b>Listed</b>' + (d.al.has.length ? esc(shortList(d.al.has)) : 'Nothing confirmed') + '</span>' +
+        '<span class="row"><b>Listed</b>' + (d.al.has.length ? esc(shortList(d.al.has)) : (d.al.none ? 'None of the 14 allergens' : 'Nothing confirmed')) + '</span>' +
         (q.length ? '<span class="row"><b>Not confirmed</b>' + esc(shortList(q)) + '</span>' : '') +
         (d.al.open ? '<span class="row"><b>No confirmed list</b>Treat every allergen as possible until the kitchen confirms.</span>' : '') +
         '<span class="row sellrow"><b>Always</b><p>' + esc(RULE) + '</p></span>';

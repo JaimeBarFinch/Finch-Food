@@ -6,6 +6,7 @@ D = {
         sell='Crisp, golden fries.',
         plate='Fries, soaked overnight in vinegar, served crisp and golden.',
         service='Ask if the guest would like ketchup, mayonnaise or both.',
+        flag='Ketchup and mayonnaise are extras with their own ingredients. Check them with the kitchen separately.',
         terms=['Frites']),
     'sweetheart': dict(section='sides', name='Well-dressed sweetheart', short='Sweetheart cabbage',
         sell='Crisp sweetheart cabbage dressed with olive oil, lemon, salt and pepper.',
