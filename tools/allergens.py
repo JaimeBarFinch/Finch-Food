@@ -11,13 +11,14 @@
 #     that is not in `contains` as "not confirmed" for that dish.
 #   - `no` = allergens the kitchen has said in writing are NOT in the dish, where an earlier document listed them.
 #     Quote the kitchen's words in `raw`. Never add to `no` on anyone else's say-so.
+#   - `none=True` = the kitchen has said the dish has none of the 14 allergens. Quote them in `raw`.
 #   - The build checks `raw` against `contains` + `maybe` + `no`, so they cannot drift apart.
 #
 # Allergen keys (the 14 UK allergens):
 #   celery gluten crustaceans eggs fish lupin milk molluscs mustard nuts peanuts sesame soya sulphites
 
-# Allergen lists come from the Food Bible PDF (November 2026). The later description sheet (a Word file, also
-# November 2026) has no allergen lines, so dishes that appear only on that sheet are open=True with no list.
+# Allergen lists come from the Food Bible PDF (November 2026), then from the answers Bar Finch gave on
+# 10 November 2026 to the open questions (marked in each `raw`). A dish with no answer yet is open=True.
 SOURCE = 'Bar Finch Food Bible'
 SOURCE_DATE = 'November 2026'
 
@@ -27,34 +28,37 @@ A = {
     # ---- starters
     'reuben': dict(raw='Milk/dairy, sulphites, gluten, egg, mustard.',
                    contains=['milk', 'sulphites', 'gluten', 'eggs', 'mustard']),
-    'tartare': dict(raw='Fish, egg, mustard, gluten; soy and sulphites may apply from the cure/condiments - confirm against the live allergen matrix.',
-                    contains=['fish', 'eggs', 'mustard', 'gluten'], maybe=['soya', 'sulphites']),
+    'tartare': dict(raw='Gluten, eggs, fish, mustard, soya, sulphites. (Given by Bar Finch on 10 November 2026.)',
+        contains=['gluten', 'eggs', 'fish', 'mustard', 'soya', 'sulphites']),
     'crabcakes': dict(raw='Shellfish/crustaceans, egg, mustard, milk and gluten.',
                       contains=['crustaceans', 'eggs', 'mustard', 'milk', 'gluten']),
-    'artichoke': dict(raw='', contains=[], open=True),       # description sheet only: no allergen line
-    'lobster': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
-    'souffle': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
+    'artichoke': dict(raw='Tree Nuts, Sesame, Dairy, Gluten, Sulphites. (Given by Bar Finch on 10 November 2026.)',
+        contains=['nuts', 'sesame', 'milk', 'gluten', 'sulphites']),
+    'lobster': dict(raw='Crustaceans, milk, celery. (Given by Bar Finch on 10 November 2026.)',
+        contains=['crustaceans', 'milk', 'celery']),
+    'souffle': dict(raw='Milk, gluten, eggs. (Given by Bar Finch on 10 November 2026.)',
+        contains=['milk', 'gluten', 'eggs']),
     'caesar': dict(raw='Fish, milk, egg, mustard, gluten, sulphites.',
                    contains=['fish', 'milk', 'eggs', 'mustard', 'gluten', 'sulphites']),
     # ---- mains
-    'trout': dict(raw='Fish; sulphites may apply from capers - confirm current matrix.',
-                  contains=['fish'], maybe=['sulphites']),
+    'trout': dict(raw='Fish, sulphites. (Given by Bar Finch on 10 November 2026.)',
+        contains=['fish', 'sulphites']),
     'hamburger': dict(raw='Gluten, milk, mustard, egg; sulphites. The kitchen\'s later description sheet says: DOES NOT CONTAIN EGG.',
                       contains=['gluten', 'milk', 'mustard', 'sulphites'], no=['eggs']),
-    'potpie': dict(raw='', contains=[], open=True),          # description sheet only: no allergen line
-    'steakfrites': dict(raw='Milk.',
-                        contains=['milk']),
+    'potpie': dict(raw='Gluten, Milk, Eggs, Sulphites, Mustard. (Given by Bar Finch on 10 November 2026.)',
+        contains=['gluten', 'milk', 'eggs', 'sulphites', 'mustard']),
+    'steakfrites': dict(raw='Sulphites, Dairy. (Given by Bar Finch on 10 November 2026.)',
+        contains=['sulphites', 'milk']),
     'piccata': dict(raw='Milk and sulphites.',
                     contains=['milk', 'sulphites']),
-    'schnitzel': dict(raw='Gluten and egg likely from schnitzel coating; confirm full current matrix.',
-                      contains=[], maybe=['gluten', 'eggs'], open=True),
-    # ---- sides
-    'fries': dict(raw='Sulphites',
-                  contains=['sulphites']),
-    'sweetheart': dict(raw='',   # the Food Bible has no allergen line for this dish
-                       contains=[], open=True),
-    'mixedleaf': dict(raw='Mustard',
-                      contains=['mustard']),
+    'schnitzel': dict(raw='Gluten, Egg, Soya. (Given by Bar Finch on 10 November 2026.)',
+        contains=['gluten', 'eggs', 'soya']),
+    'fries': dict(raw='Sulphites. (Given by Bar Finch on 10 November 2026.)',
+        contains=['sulphites']),
+    'sweetheart': dict(raw='Nothing. (Given by Bar Finch on 10 November 2026.)',
+        contains=[], none=True),
+    'mixedleaf': dict(raw='Mustard, Sulphites. (Given by Bar Finch on 10 November 2026.)',
+        contains=['mustard', 'sulphites']),
     'mash': dict(raw='Milk',
                  contains=['milk']),
     'greensbeans': dict(raw='Milk.',
@@ -64,19 +68,18 @@ A = {
                       contains=['eggs', 'milk', 'sulphites']),
     'peppercorn': dict(raw='Sulphites',
                        contains=['sulphites']),
-    'holstein': dict(raw='Fish, milk; sulphites may apply from capers - confirm current matrix.',
-                     contains=['fish', 'milk'], maybe=['sulphites']),
-    # ---- desserts
+    'holstein': dict(raw='Fish, sulphites, mustard, milk. (Given by Bar Finch on 10 November 2026.)',
+        contains=['fish', 'sulphites', 'mustard', 'milk']),
     'tiramisu': dict(raw='Milk, egg, gluten, sulphites',
                      contains=['milk', 'eggs', 'gluten', 'sulphites']),
-    'lemonpie': dict(raw='Milk, egg, gluten likely from cake base - confirm full current matrix.',
-                     contains=['milk', 'eggs'], maybe=['gluten'], open=True),
+    'lemonpie': dict(raw='Gluten, Eggs, Milk. (Given by Bar Finch on 10 November 2026.)',
+        contains=['gluten', 'eggs', 'milk']),
     'cremoso': dict(raw='Milk, Eggs.',
                     contains=['milk', 'eggs']),
     'semifreddo': dict(raw='Milk, egg; sulphites.',
                        contains=['milk', 'eggs', 'sulphites']),
-    'beignet': dict(raw='Gluten, egg and milk likely; sulphites may apply from brandy per previous chef note - confirm current matrix.',
-                    contains=[], maybe=['gluten', 'eggs', 'milk', 'sulphites'], open=True),
+    'beignet': dict(raw='Gluten, egg, milk. (Given by Bar Finch on 10 November 2026.)',
+        contains=['gluten', 'eggs', 'milk']),
 }
 
 # Questions for the kitchen. The build stops if a dish's own text names an ingredient that points to an
@@ -90,35 +93,13 @@ QUERIES = {
         ('fish', 'Caviar is sturgeon roe.'),
         ('milk', 'Served with crème fraîche.'),
     ],
-    'artichoke': [
-        ('nuts', 'Dressed with a walnut mole.'),
-        ('sesame', 'Finished with sesame oil.'),
-    ],
-    'lobster': [
-        ('crustaceans', 'The dish is lobster.'),
-        ('milk', 'The kitchen\'s notes mention monté au beurre, a butter sauce.'),
-    ],
-    'souffle': [
-        ('milk', 'Made with butter and Parmesan, with a béchamel-style sauce.'),
-        ('gluten', 'The roux is made with flour.'),
-        ('eggs', 'A soufflé is normally made with egg.'),
-    ],
     'potpie': [
-        ('gluten', 'Topped with puff pastry.'),
-        ('milk', 'Puff pastry is made with butter.'),
-        ('nuts', 'The filling has chestnuts.'),
+        ('nuts', 'The filling has chestnuts, and the list given on 10 November 2026 does not mention nuts.'),
     ],
     'steakfrites': [
-        ('sulphites', 'Served with fries, and the fries entry lists sulphites.'),
-        ('eggs', 'Mayonnaise is offered on request.'),
+        ('eggs', 'KITCHEN CONFIRMED NO (10 November 2026): mayonnaise is an extra on request, not part of the dish.'),
     ],
     'fries': [
-        ('eggs', 'Mayonnaise is offered with the fries.'),
-    ],
-    'mixedleaf': [
-        ('sulphites', 'The house dressing is described as mustard, lemon, sherry and olive oil.'),
-    ],
-    'schnitzel': [
-        ('soya', 'The brine is described as honey, sugar, soy and salt.'),
+        ('eggs', 'KITCHEN CONFIRMED NO (10 November 2026): mayonnaise is an extra, not part of the dish.'),
     ],
 }

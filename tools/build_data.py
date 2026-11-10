@@ -124,7 +124,9 @@ def build():
         for a in has + maybe + no:
             need(a in KEYS, f'{did}: "{a}" is not one of the 14 allergen keys')
         need(not set(has) & set(maybe), f'{did}: an allergen is in both contains and maybe')
-        need(has or opn, f'{did}: no allergen is stated. Copy the kitchen\'s list, or set open=True so the app shows "not confirmed"')
+        none = r.get('none', False)
+        need(has or opn or none, f'{did}: no allergen is stated. Copy the kitchen\'s list, or set open=True so the app shows "not confirmed"')
+        need(not none or (not has and not maybe and not opn and 'nothing' in raw.lower()), f'{did}: none=True needs an empty list and the kitchen\'s own "Nothing" in raw')
         need(raw or opn, f'{did}: there is no kitchen wording (raw). Set open=True so the app shows "not confirmed"')
         low = raw.lower()
         for a in KEYS:
@@ -329,7 +331,7 @@ def build():
         out['withs'] = d.get('with_', [])
         out['wines'] = [dict(id=w, short=WINES[w]['short'], glass=WINES[w]['glass'], why=why) for w, why in d.get('wines', [])]
         out['al'] = dict(has=[a for a in KEYS if a in r['contains']], maybe=[a for a in KEYS if a in r.get('maybe', [])],
-                         open=bool(r.get('open')), raw=r.get('raw', ''), q=[dict(a=a, note=n) for a, n in queries(did)])
+                         open=bool(r.get('open')), none=bool(r.get('none')), raw=r.get('raw', ''), q=[dict(a=a, note=n) for a, n in queries(did)])
         dishes.append(out)
 
     today = datetime.date.today().isoformat()
