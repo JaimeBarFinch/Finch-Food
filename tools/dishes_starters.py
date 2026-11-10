@@ -1,4 +1,4 @@
-# Bar snacks, starters and salads, in the order of the kitchen's sheet. Staff notes for each dish, written from the Food Bible.
+# Bar snacks and starters, in the order of the kitchen's sheet. Staff notes for each dish, written from the Food Bible.
 #
 # Fields (the same pattern as the wine app's wines_*.py):
 #   section  which part of the menu
@@ -77,7 +77,7 @@ D = {
         plate='Lobster Thermidor. The meat is carved out and then put back in the shell.',
         portion='Half or whole.',
         flag='Ask whether the guest would like a half or a whole lobster. The kitchen has not yet written up how our Thermidor is made, so ask them before you describe the sauce.',
-        terms=['Thermidor', 'Monte', 'Green garlic'],
+        terms=['Thermidor', 'Gratinated', 'Monte', 'Green garlic'],
         wines=[('w025', 'A rich, oaked white Burgundy.'),
                ('w022', 'A rich, oaked white Burgundy, by the bottle.')]),
     'souffle': dict(section='starters', name='Double-baked Parmesan soufflé with seasonal truffle', short='Parmesan soufflé',
@@ -87,25 +87,4 @@ D = {
         terms=['Soufflé', 'Roux', 'Béchamel', 'Truffle'],
         wines=[('w076', 'The house Champagne: rich and toasty with cheese.'),
                ('w015', 'A crisp white Burgundy.')]),
-    'tomatosalad': dict(section='starters', name='Tomato salad', short='Tomato salad',
-        sell='Seasonal tomatoes and shallots in our sherry-vinegar house dressing: bright, juicy and lightly sharp.',
-        plate='Seasonal tomatoes dressed with the house sherry-vinegar dressing and shallots.',
-        terms=['Sherry vinegar', 'House dressing'],
-        wines=[('w012', 'The house white: crisp and fresh with tomato.'),
-               ('w051', 'A pale, dry rosé.')]),
-
-    # ------------------------------------------------------------ salads
-    'choppedsalad': dict(section='salads', name='Chopped salad', short='Chopped salad',
-        sell='A fresh chopped salad of tomato, fennel, baby gem, olives and red onion with a confit garlic and lemon dressing.',
-        plate='Datterini tomatoes, fennel, baby gem lettuce, Kalamata olives and red onion, chopped and finished with a confit garlic and lemon dressing.',
-        terms=['Datterini', 'Kalamata olives', 'Confit'],
-        wines=[('w051', 'A pale, dry rosé for a crisp salad.'),
-               ('w012', 'The house white: crisp and fresh.')]),
-    'tuna': dict(section='salads', name='Tuna with olives & capers', short='Tuna',
-        sell='Sashimi yellowfin tuna on a tomato sauce sharpened with sherry vinegar, with capers, black olives and olive oil.',
-        plate='Sashimi yellowfin tuna served on pomodoro sauce, which is seasoned with sherry vinegar, salt and pepper. Garnished with capers and black olives and lightly finished with olive oil.',
-        flag='The Food Bible describes this as sashimi tuna. If a guest asks about raw fish, check with the kitchen how it is served.',
-        terms=['Sashimi', 'Yellowfin tuna', 'Pomodoro', 'Sherry vinegar'],
-        wines=[('w051', 'A pale, dry rosé: good with tuna, olives and tomato.'),
-               ('w008', 'A crisp, salty Sicilian white.')]),
 }

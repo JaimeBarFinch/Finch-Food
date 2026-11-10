@@ -31,7 +31,7 @@ WINE_APP = 'https://7shb49djdk-spec.github.io/finch-wine/'
 # Set to True once the wine pairings have been approved. Until then each dish page says they are a draft.
 PAIRINGS_APPROVED = False
 
-SECTIONS = [('snacks', 'Bar snacks'), ('starters', 'Starters'), ('salads', 'Salads'), ('mains', 'Mains'),
+SECTIONS = [('snacks', 'Bar snacks'), ('starters', 'Starters'), ('mains', 'Mains'),
             ('sides', 'Sides'), ('sauces', 'Sauces'), ('desserts', 'Desserts')]
 
 # How each allergen is named in the kitchen's own wording (used to check `raw` against the record).
@@ -69,8 +69,8 @@ CLAIMS = r'\b[a-z]+[- ]free\b|free from|safe for|suitable for'
 MENTIONS = [
     (r'anchov', {'tartare', 'caesar', 'holstein'}, 'anchovy'),
     (r'beef fat', {'reuben', 'hamburger', 'steakfrites'}, 'beef fat'),
-    (r'honey', {'roastchicken', 'schnitzel', 'semifreddo'}, 'honey'),
-    (r'\bbrin', {'caesar', 'roastchicken', 'schnitzel'}, 'brine'),
+    (r'honey', {'schnitzel', 'semifreddo'}, 'honey'),
+    (r'\bbrin', {'caesar', 'schnitzel'}, 'brine'),
 ]
 
 
@@ -194,9 +194,7 @@ def build():
         v = D.get(did, {}).get(key, '')
         for w in words:
             need(w.lower() in v.lower(), f'{did}.{key} no longer says "{w}": the guide and the courses still do')
-    has('langoustines', 'portion', 'Three')
     has('beignet', 'portion', 'Three')
-    has('roastchicken', 'portion', 'Half or whole')
     has('lobster', 'portion', 'Half or whole')
     has('caviar', 'name', '30 g')
     has('caviar', 'service', 'One caviar spoon per table for up to four guests', 'Two spoons')
@@ -224,7 +222,7 @@ def build():
     has('tiramisu', 'alcohol', 'Disaronno and marsala')
     has('peppercorn', 'alcohol', 'brandy and port')
     has('semifreddo', 'alcohol', 'brandy')
-    need(len(SECTIONS) == 7, 'the guide says "seven sections"')
+    need(len(SECTIONS) == 6, 'the guide says "six sections"')
     need(all(any(d['section'] == s for d in D.values()) for s in SEC), 'a section has no dishes')
 
     # ------------------------------------------------------------------ 6. status and tokens

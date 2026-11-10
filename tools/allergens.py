@@ -34,31 +34,18 @@ A = {
     'artichoke': dict(raw='', contains=[], open=True),       # description sheet only: no allergen line
     'lobster': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
     'souffle': dict(raw='', contains=[], open=True),         # description sheet only: no allergen line
-    'tomatosalad': dict(raw='Mustard, sulphites.',
-                        contains=['mustard', 'sulphites']),
-    # ---- salads
-    'choppedsalad': dict(raw='Sulphites.',
-                         contains=['sulphites']),
     'caesar': dict(raw='Fish, milk, egg, mustard, gluten, sulphites.',
                    contains=['fish', 'milk', 'eggs', 'mustard', 'gluten', 'sulphites']),
-    'tuna': dict(raw='Fish, sulphites, (may include gluten later, tbc)',
-                 contains=['fish', 'sulphites'], maybe=['gluten']),
     # ---- mains
     'trout': dict(raw='Fish; sulphites may apply from capers - confirm current matrix.',
                   contains=['fish'], maybe=['sulphites']),
-    'langoustines': dict(raw='Crustaceans, milk, sulphites; soy.',
-                         contains=['crustaceans', 'milk', 'sulphites', 'soya']),
     'hamburger': dict(raw='Gluten, milk, mustard, egg; sulphites. The kitchen\'s later description sheet says: DOES NOT CONTAIN EGG.',
                       contains=['gluten', 'milk', 'mustard', 'sulphites'], no=['eggs']),
     'potpie': dict(raw='', contains=[], open=True),          # description sheet only: no allergen line
-    'roastchicken': dict(raw='Confirm with kitchen; honey is not one of the UK 14 declarable allergens.',
-                         contains=[], open=True),
     'steakfrites': dict(raw='Milk.',
                         contains=['milk']),
     'piccata': dict(raw='Milk and sulphites.',
                     contains=['milk', 'sulphites']),
-    'melanzane': dict(raw='Milk',
-                      contains=['milk']),
     'schnitzel': dict(raw='Gluten and egg likely from schnitzel coating; confirm full current matrix.',
                       contains=[], maybe=['gluten', 'eggs'], open=True),
     # ---- sides
@@ -127,10 +114,6 @@ QUERIES = {
     ],
     'fries': [
         ('eggs', 'Mayonnaise is offered with the fries.'),
-    ],
-    'melanzane': [
-        ('mustard', 'Served with the mixed leaf salad, and that entry lists mustard.'),
-        ('sulphites', 'Served with the mixed leaf salad, whose house dressing includes sherry.'),
     ],
     'mixedleaf': [
         ('sulphites', 'The house dressing is described as mustard, lemon, sherry and olive oil.'),

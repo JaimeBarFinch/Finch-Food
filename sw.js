@@ -3,7 +3,7 @@
    The wine app lives on the same GitHub Pages address, so this worker only ever touches caches whose
    name starts with PREFIX, and it puts files back if another app has cleared them. */
 var PREFIX = 'finch-food-';
-var VERSION = 'finch-food-2026-11-10-c077b6a3';
+var VERSION = 'finch-food-2026-11-10-fa597b0e';
 var FILES = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/data.js', 'manifest.webmanifest',
   'fonts/Poppins-Light.ttf', 'fonts/Poppins-LightItalic.ttf', 'fonts/Poppins-Medium.ttf',

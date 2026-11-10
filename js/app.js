@@ -615,7 +615,7 @@
   function glossCards(kinds) { return D.gloss.filter(function (g) { return kinds.indexOf(g.k) >= 0; }).map(function (g) { return { key: 'gl:' + g.t, kind: 'gloss', g: g }; }); }
   var DECKS = {
     allergens: { t: 'Allergens by dish', d: 'What the Food Bible lists for each dish', cards: function () { return D.dishes.map(function (d) { return { key: 'al:' + d.id, kind: 'al', d: d }; }); } },
-    starters: { t: 'Snacks, starters & salads', cards: function () { return secCards(['snacks', 'starters', 'salads']); } },
+    starters: { t: 'Snacks & starters', cards: function () { return secCards(['snacks', 'starters']); } },
     mains: { t: 'Mains', cards: function () { return secCards(['mains']); } },
     sides: { t: 'Sides & sauces', cards: function () { return secCards(['sides', 'sauces']); } },
     desserts: { t: 'Desserts', cards: function () { return secCards(['desserts']); } },
