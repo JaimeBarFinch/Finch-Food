@@ -85,7 +85,7 @@
     }).join('');
   }
 
-  /* ---------- router: hash routes with hyphens, e.g. #info-dish-gildas, #train-lesson-menu-mains ---------- */
+  /* ---------- router: hash routes with hyphens, e.g. #info-dish-reuben, #train-lesson-menu-mains ---------- */
   var after = null, keepScroll = false;
   function route() {
     var raw = location.hash || '#info', p = raw.replace(/^#\/?/, '').split('-');
