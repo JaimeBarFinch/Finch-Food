@@ -24,8 +24,8 @@ SOURCE_DATE = 'November 2026'
 
 A = {
     # ---- bar snacks
-    'caviar': dict(raw='Fish & Gluten. (Given by Bar Finch on 10 November 2026.)',
-        contains=['fish', 'gluten']),
+    'caviar': dict(raw='Fish & Gluten, and Dairy. (Given by Bar Finch on 10 November 2026.)',
+        contains=['fish', 'gluten', 'milk']),
     # ---- starters
     'reuben': dict(raw='Milk/dairy, sulphites, gluten, egg, mustard.',
                    contains=['milk', 'sulphites', 'gluten', 'eggs', 'mustard']),
@@ -90,9 +90,6 @@ A = {
 #   - if the allergen applies, add it to `contains` above and delete the question;
 #   - if it does not, keep the question's line but start the note with 'KITCHEN CONFIRMED NO:' and the date.
 QUERIES = {
-    'caviar': [
-        ('milk', 'Served with crème fraîche, and the list given on 10 November 2026 does not mention milk.'),
-    ],
     'steakfrites': [
         ('eggs', 'KITCHEN CONFIRMED NO (10 November 2026): mayonnaise is an extra on request, not part of the dish.'),
     ],
