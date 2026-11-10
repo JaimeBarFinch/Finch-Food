@@ -1,0 +1,474 @@
+{
+ "source": "Bar Finch wine app (finch-wine js/data.js)",
+ "takenAt": "2026-11-06",
+ "wines": [
+  {
+   "id": "w076",
+   "short": "Devaux Cuvée D",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w078",
+   "short": "Devaux Cuvée D magnum",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w077",
+   "short": "Devaux D Rosé",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w061",
+   "short": "Pol Roger Brut Réserve",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w063",
+   "short": "Billecart Rosé",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w060",
+   "short": "Bonnet-Gilmert Blanc de Blancs",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w062",
+   "short": "Taillet Blanc de Noirs",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w064",
+   "short": "Pol Roger Vintage",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w079",
+   "short": "Devaux Sténopé",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w065",
+   "short": "Pol Roger Vintage Rosé",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w066",
+   "short": "Sir Winston Churchill",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w067",
+   "short": "Cristal",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w056",
+   "short": "Vouvray La Dilettante",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w055",
+   "short": "Franciacorta",
+   "section": "sparkling",
+   "glass": true
+  },
+  {
+   "id": "w057",
+   "short": "Herbert Hall Brut",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w059",
+   "short": "Herbert Hall Rosé",
+   "section": "sparkling",
+   "glass": false
+  },
+  {
+   "id": "w007",
+   "short": "Chablis",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w015",
+   "short": "Saint-Romain",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w016",
+   "short": "Chablis 1er Cru Beauroy",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w022",
+   "short": "Chassagne-Montrachet 1er",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w025",
+   "short": "Corton-Charlemagne",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w001",
+   "short": "Muscadet",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w013",
+   "short": "Pouilly-Fumé",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w009",
+   "short": "Savennières",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w020",
+   "short": "Sancerre",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w004",
+   "short": "Rolly Gassmann Riesling",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w010",
+   "short": "Pessac-Léognan Blanc",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w024",
+   "short": "Blanc de Lynch-Bages",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w019",
+   "short": "Condrieu",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w017",
+   "short": "Châteauneuf-du-Pape Blanc",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w002",
+   "short": "Toblino Sauvignon Blanc",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w008",
+   "short": "Etna Bianco",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w012",
+   "short": "Montefoscoli Vermentino",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w011",
+   "short": "Soave",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w014",
+   "short": "Scarbolo Areore",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w023",
+   "short": "Cervaro della Sala",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w003",
+   "short": "Terras Gauda Albariño",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w018",
+   "short": "Vinya del Coll",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w006",
+   "short": "AWM Grüner Veltliner",
+   "section": "white",
+   "glass": true
+  },
+  {
+   "id": "w005",
+   "short": "Davenport Horsmonden",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w021",
+   "short": "Liquid Farm Chardonnay",
+   "section": "white",
+   "glass": false
+  },
+  {
+   "id": "w053",
+   "short": "Tavel",
+   "section": "rose",
+   "glass": false
+  },
+  {
+   "id": "w051",
+   "short": "Ollières Rosé",
+   "section": "rose",
+   "glass": true
+  },
+  {
+   "id": "w054",
+   "short": "Ott Clos Mireille",
+   "section": "rose",
+   "glass": false
+  },
+  {
+   "id": "w052",
+   "short": "AWM Karambolage Rosé",
+   "section": "rose",
+   "glass": true
+  },
+  {
+   "id": "w031",
+   "short": "Coteaux Bourguignons",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w049",
+   "short": "Volnay Taillepieds",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w028",
+   "short": "Juliénas",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w036",
+   "short": "Morgon Côte du Py",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w032",
+   "short": "Saint-Émilion",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w035",
+   "short": "Pessac-Léognan",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w037",
+   "short": "Pomerol",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w040",
+   "short": "Brio de Cantenac Brown",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w050",
+   "short": "Pavillon Rouge",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w027",
+   "short": "Rasteau",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w046",
+   "short": "Côte-Rôtie",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w047",
+   "short": "Châteauneuf-du-Pape",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w048",
+   "short": "Ambonnay Rouge",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w026",
+   "short": "Novaia Valpolicella",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w030",
+   "short": "Rosso di Montalcino",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w034",
+   "short": "Montefoscoli Sangiovese",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w042",
+   "short": "Barolo",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w039",
+   "short": "Amarone",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w043",
+   "short": "Barbaresco Il Pilone",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w044",
+   "short": "Etna Rosso",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w045",
+   "short": "Brunello di Montalcino",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w029",
+   "short": "Toro Dehesa Gago",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w038",
+   "short": "Rioja Gran Reserva",
+   "section": "red",
+   "glass": true
+  },
+  {
+   "id": "w033",
+   "short": "Saperavi",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w041",
+   "short": "Turley Zinfandel",
+   "section": "red",
+   "glass": false
+  },
+  {
+   "id": "w073",
+   "short": "Pierre Bise Coteaux du Layon",
+   "section": "sweet",
+   "glass": false
+  },
+  {
+   "id": "w071",
+   "short": "Sauternes",
+   "section": "sweet",
+   "glass": true
+  },
+  {
+   "id": "w072",
+   "short": "Climens Barsac",
+   "section": "sweet",
+   "glass": false
+  },
+  {
+   "id": "w068",
+   "short": "Mas Amiel Maury",
+   "section": "sweet",
+   "glass": false
+  },
+  {
+   "id": "w075",
+   "short": "Vin Santo",
+   "section": "sweet",
+   "glass": true
+  },
+  {
+   "id": "w069",
+   "short": "White Port",
+   "section": "sweet",
+   "glass": true
+  },
+  {
+   "id": "w070",
+   "short": "LBV Port",
+   "section": "sweet",
+   "glass": true
+  },
+  {
+   "id": "w074",
+   "short": "Colheita White Port",
+   "section": "sweet",
+   "glass": true
+  }
+ ]
+}
