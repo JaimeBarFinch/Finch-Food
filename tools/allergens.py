@@ -19,8 +19,6 @@ SOURCE_DATE = 'November 2026'
 
 A = {
     # ---- bar snacks / small plates
-    'gildas': dict(raw='Fish, gluten, milk, sulphites.',
-                   contains=['fish', 'gluten', 'milk', 'sulphites']),
     'reuben': dict(raw='Milk/dairy, sulphites, gluten, egg, mustard.',
                    contains=['milk', 'sulphites', 'gluten', 'eggs', 'mustard']),
     # ---- starters

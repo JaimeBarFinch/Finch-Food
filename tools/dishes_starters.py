@@ -20,14 +20,6 @@
 
 D = {
     # ------------------------------------------------------------ bar snacks / small plates
-    'gildas': dict(section='snacks', name='Gildas', short='Gildas',
-        sell='Two crisp tempura skewers of Gorgonzola-stuffed olive, anchovy and chilli: salty, creamy and a little spicy.',
-        plate='Two skewers. Each is built around a Gordal olive stuffed with Gorgonzola, with anchovy and guindilla chilli, and the skewer is tempura-fried.',
-        portion='Two skewers per portion.',
-        flag='There is anchovy on every skewer.',
-        terms=['Gilda', 'Gordal olive', 'Guindilla', 'Gorgonzola', 'Tempura'],
-        wines=[('w055', 'Crisp, dry fizz for something fried and salty.'),
-               ('w069', 'White Port is a classic with olives and salty snacks.')]),
     'reuben': dict(section='snacks', name='The Reuben', short='The Reuben',
         sell='Pulled pastrami and Emmental in sourdough toasted in beef fat, on fennel kraut with Thousand Island.',
         plate='Pulled pastrami, made from beef brisket, and Emmental cheese between slices of multigrain sourdough toasted in beef fat. It is served over fennel kraut dressed with Thousand Island.',

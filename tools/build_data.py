@@ -67,7 +67,7 @@ CLAIMS = r'\b[a-z]+[- ]free\b|free from|safe for|suitable for'
 # Facts that the guide and the courses state in words. Each word must appear in the notes of exactly
 # these dishes; if a recipe changes, the build stops and the guide has to be rewritten.
 MENTIONS = [
-    (r'anchov', {'gildas', 'tartare', 'caesar', 'holstein'}, 'anchovy'),
+    (r'anchov', {'tartare', 'caesar', 'holstein'}, 'anchovy'),
     (r'beef fat', {'reuben', 'hamburger', 'steakfrites'}, 'beef fat'),
     (r'honey', {'roastchicken', 'schnitzel', 'semifreddo'}, 'honey'),
     (r'\bbrin', {'caesar', 'roastchicken', 'schnitzel'}, 'brine'),
@@ -192,7 +192,6 @@ def build():
         v = D.get(did, {}).get(key, '')
         for w in words:
             need(w.lower() in v.lower(), f'{did}.{key} no longer says "{w}": the guide and the courses still do')
-    has('gildas', 'portion', 'Two skewers')
     has('langoustines', 'portion', 'Three')
     has('beignet', 'portion', 'Three')
     has('roastchicken', 'portion', 'Half or whole')

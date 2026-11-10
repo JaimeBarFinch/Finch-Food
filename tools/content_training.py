@@ -1,6 +1,6 @@
 # Training courses for the food app. Only what is relevant to the Bar Finch menu.
 #
-# In a card:  {d:gildas}      becomes a link to that dish (its short name); in a quiz it becomes the plain name.
+# In a card:  {d:reuben}      becomes a link to that dish (its short name); in a quiz it becomes the plain name.
 #             {al:fish}       becomes the list of dishes whose allergen record lists fish (built from allergens.py).
 #             {unconfirmed}   becomes the list of dishes whose allergens are not fully confirmed.
 #             {absent}        becomes the allergens that no dish lists.
@@ -64,14 +64,11 @@ COURSES = [
   # =====================================================================================================
   dict(id='menu', title='Know the menu', blurb='Every dish, section by section: what is on the plate and what to say about it.', lessons=[
     dict(id='snacks', title='Snacks and starters', cards=[
-      ('Gildas', '{d:gildas}: two tempura-fried skewers. Each has a Gordal olive stuffed with Gorgonzola, with anchovy and guindilla chilli. A gilda is a Basque bar snack; ours is fried. Crisp, salty, creamy and gently spicy.'),
       ('The Reuben', '{d:reuben}: pulled pastrami, made from beef brisket, and Emmental in multigrain sourdough toasted in beef fat. It is served over fennel kraut dressed with Thousand Island.'),
       ('Longhorn rump tartare', '{d:tartare}: rump (picanha), seared, chilled and finely diced, mixed with capers, shallots, Dijon mustard, cornichons, olive oil, anchovies and chilli crisp. Finished with a herb salad and an egg yolk cured in soy and mirin. Game chips on the side.'),
       ('Dorset crab cakes', '{d:crabcakes}: brown and white crab meat with herbs, on a dry mashed-potato base. Served with preserved-lemon tartare sauce and a herb salad.'),
       ('Tomato salad', '{d:tomatosalad}: seasonal tomatoes and shallots in the house sherry-vinegar dressing. Bright, juicy and lightly sharp.'),
     ], quiz=[
-      ('How many skewers are in a portion of Gildas?', ['Two', 'One', 'Three', 'Four'], 0, 'Two skewers per portion.'),
-      ('What is the olive in our Gilda stuffed with?', ['Gorgonzola', 'Emmental', 'Mascarpone', 'Parmesan'], 0, 'A Gordal olive stuffed with Gorgonzola.'),
       ('What is the Reuben’s bread toasted in?', ['Beef fat', 'Brown butter', 'Olive oil', 'Clarified butter'], 0, 'Beef fat. Worth knowing for a guest who does not eat beef.'),
       ('What comes on the side of the tartare?', ['Game chips', 'Fries', 'Focaccia croutons', 'Sourdough'], 0, 'Game chips: thin slices of potato, fried until crisp.'),
       ('What is the base of the crab cakes?', ['Dry mashed potato', 'Rice', 'Polenta', 'Chickpeas'], 0, 'Dry mashed potato binds the crab and herbs.'),
@@ -133,7 +130,7 @@ COURSES = [
       ('What is the base of the lemon meringue pie?', ['A blond cake base', 'Shortcrust pastry', 'Ladyfingers', 'A biscuit crumb'], 0, 'The custard is set over a traditional blond cake base.'),
     ]),
     dict(id='table', title='At the table', cards=[
-      ('Portions', 'Gildas: two skewers. Langoustines: three. Beignets: three pieces. Roast chicken: half or whole.'),
+      ('Portions', 'Langoustines: three. Beignets: three pieces. Roast chicken: half or whole.'),
       ('Questions to ask', 'Steak: pink or well done. Roast chicken: half or whole. Fries: ketchup, mayonnaise or both. Ketchup and mayonnaise are also available with the steak frites on request.'),
       ('Cutlery: mains and sides', 'Steak frites: steak knife and fork. Schnitzel: steak knife and main fork. Mash: a pasta spoon. Mixed leaf salad and greens & beans: a starter fork.'),
       ('Cutlery: desserts', 'Every dessert takes a dessert spoon. The tiramisu, the lemon meringue pie and the beignets also take a starter fork. The cremoso and the semifreddo are spoon only.'),
@@ -173,17 +170,15 @@ COURSES = [
       ('Which sauce is an emulsion of egg yolk and clarified butter?', ['Béarnaise', 'Peppercorn', 'Holstein', 'Gravy'], 0, 'Béarnaise, with a reduction of white wine vinegar and herbs.'),
     ]),
     dict(id='heat', title='Frying, grilling and finishing', cards=[
-      ('Tempura', 'A light batter. Food is dipped in it and fried until crisp. The {d:gildas} are tempura-fried.'),
       ('Schnitzel', 'Meat coated in crumbs and fried. Ours is a Mangalitsa pork chop: the {d:schnitzel}.'),
       ('Sear', 'To brown the outside quickly over high heat. The beef for the {d:tartare} is seared, then chilled and diced. The {d:hamburger} is seared in beef fat.'),
       ('Grill and pan-roast', 'The {d:langoustines} are halved and grilled. The poussin for the {d:piccata} is pan-roasted, then finished in the oven.'),
       ('Gratinate, confit, blanch', '<b>Gratinated</b>: browned on top under heat, like the {d:melanzane}. <b>Confit</b>: cooked slowly until soft, like the garlic in the {d:choppedsalad} dressing. <b>Blanch</b>: to boil briefly, then cool, like the vegetables in the {d:greensbeans}.'),
     ], quiz=[
-      ('Tempura is…', ['A light batter, fried until crisp', 'A crumb coating', 'A marinade', 'A Japanese vinegar'], 0, 'The Gildas are tempura-fried.'),
       ('“Gratinated” means…', ['Browned on top under heat', 'Grated finely', 'Cooked slowly in fat', 'Fried in crumbs'], 0, 'The melanzane is cooked until soft, rich and gratinated.'),
       ('What is confit garlic?', ['Garlic cooked slowly until soft and mellow', 'Raw garlic, crushed', 'Garlic pickled in vinegar', 'Garlic fried until crisp'], 0, 'It goes into the chopped salad dressing.'),
       ('To blanch is to…', ['Boil briefly, then cool', 'Fry until golden', 'Soak overnight', 'Brown under the grill'], 0, 'The green beans and spinach are blanched first.'),
-      ('How are the langoustines cooked?', ['Halved and grilled', 'Tempura-fried', 'Poached in butter', 'Served raw'], 0, 'Halved and grilled, with a prawn monte.'),
+      ('How are the langoustines cooked?', ['Halved and grilled', 'Crumbed and fried', 'Poached in butter', 'Served raw'], 0, 'Halved and grilled, with a prawn monte.'),
     ]),
     dict(id='beef', title='The beef on the menu', cards=[
       ('Longhorn and picanha', 'The {d:tartare} is made with Longhorn rump. Longhorn is a traditional English breed of beef cattle. Picanha is the rump cap.'),
@@ -199,17 +194,16 @@ COURSES = [
       ('Chuck comes from the…', ['Shoulder', 'Rump', 'Rib', 'Leg'], 0, 'A flavourful cut from the shoulder, in the burger blend.'),
     ]),
     dict(id='where', title='Where the dishes come from', cards=[
-      ('Spain and the Basque country', 'A gilda is a classic Basque pintxo, a bar snack on a skewer, of olive, anchovy and chilli: our {d:gildas}. Gordal olives and guindilla chillies are Spanish. So is sherry vinegar, in the house dressing.'),
-      ('Italy', '{d:melanzane} means aubergines “alla parmigiana”: layered and baked with tomato and cheese. Piccata, pomodoro, {d:tiramisu} (“pick me up”), {d:semifreddo} (“half cold”) and cremoso are Italian too, as are Gorgonzola, mascarpone, datterini tomatoes and marsala.'),
+      ('Spain', 'Sherry vinegar, in the house dressing, is a Spanish wine vinegar.'),
+      ('Italy', '{d:melanzane} means aubergines “alla parmigiana”: layered and baked with tomato and cheese. Piccata, pomodoro, {d:tiramisu} (“pick me up”), {d:semifreddo} (“half cold”) and cremoso are Italian too, as are mascarpone, datterini tomatoes and marsala.'),
       ('France', '{d:bearnaise}, frites, {d:beignet}, poussin and cornichons are French words. A beignet is a French fried pastry or doughnut.'),
       ('America', 'The {d:reuben}, with its pastrami and Thousand Island, and the {d:hamburger}, with American cheese and American mustard in a potato bun.'),
       ('Central Europe', 'A schnitzel is meat coated in crumbs and fried. Mangalitsa is a heritage Hungarian pig breed. Emmental is a Swiss-style cheese.'),
-      ('Japan', 'Sashimi is a Japanese way of serving fish. Mirin is a sweet Japanese rice seasoning, shio koji a fermented rice seasoning, and tempura a light batter.'),
+      ('Japan', 'Sashimi is a Japanese way of serving fish. Mirin is a sweet Japanese rice seasoning and shio koji a fermented rice seasoning.'),
       ('Britain', 'Longhorn beef, Dorset crab and chalk-stream trout.'),
     ], quiz=[
-      ('A gilda comes from…', ['The Basque country', 'Sicily', 'Provence', 'New York'], 0, 'A classic Basque pintxo of olive, anchovy and chilli.'),
       ('Which is a Hungarian breed of pig?', ['Mangalitsa', 'Longhorn', 'Picanha', 'Poussin'], 0, 'Mangalitsa, known for rich, marbled pork.'),
-      ('Mirin, shio koji and tempura all come from which kitchen?', ['Japanese', 'Italian', 'Spanish', 'French'], 0, 'All three are Japanese.'),
+      ('Mirin and shio koji both come from which kitchen?', ['Japanese', 'Italian', 'Spanish', 'French'], 0, 'Both are Japanese.'),
       ('“Semifreddo” means…', ['Half cold', 'Half sweet', 'Soft cream', 'Frozen honey'], 0, 'A soft, semi-frozen dessert.'),
       ('“Tiramisu” means…', ['Pick me up', 'Little cake', 'Coffee cream', 'In layers'], 0, 'Italian for “pick me up”.'),
     ]),
@@ -221,7 +215,7 @@ COURSES = [
       ('Three things', 'A good description covers three things: <b>what it is</b>, <b>how it is cooked</b>, and <b>what comes with it</b>. “Three langoustines, halved and grilled, with a rich, buttery prawn sauce.”'),
       ('Use the “Sell it” line', 'Every dish page starts with one line you can say out loud. Learn it, then put it in your own words.'),
       ('Plain words', 'Words that work: <b>crisp</b>, <b>fresh</b>, <b>rich</b>, <b>smoky</b>, <b>sharp</b>, <b>soft</b>, <b>salty</b>. Leave out the words that say nothing, such as “exquisite” or “amazing”.'),
-      ('Mention the surprise', 'Tell the guest what they may not expect: the anchovy on the {d:gildas} and in the {d:caesar}, the beef fat on the {d:reuben}, the alcohol in the {d:tiramisu}, the cured egg yolk on the {d:tartare}.'),
+      ('Mention the surprise', 'Tell the guest what they may not expect: the anchovy in the {d:caesar}, the beef fat on the {d:reuben}, the alcohol in the {d:tiramisu}, the cured egg yolk on the {d:tartare}.'),
       ('When you don’t know', 'Say “I’ll check”, and ask the kitchen. That is always better than guessing.'),
     ], quiz=[
       ('A good description of a dish covers…', ['What it is, how it is cooked and what comes with it', 'Every ingredient, in order', 'How long it has been on the menu', 'What other guests think of it'], 0, 'Three things, in one or two sentences.'),
@@ -232,13 +226,13 @@ COURSES = [
     dict(id='read', title='Reading the guest', cards=[
       ('Ask before you suggest', 'Two questions do most of the work: <b>how hungry are you?</b> and <b>is there anything you don’t eat?</b> Then offer one or two dishes, not five.'),
       ('Light or rich', 'Light: the {d:tomatosalad}, the {d:choppedsalad}, the {d:tuna} and the {d:trout}. Rich: the {d:reuben}, the {d:hamburger}, the {d:steakfrites} and the {d:melanzane}.'),
-      ('For the table', 'The {d:gildas}, the {d:langoustines} and the {d:beignet} come in pieces, so they share easily. The {d:roastchicken} can be ordered whole.'),
+      ('For the table', 'The {d:langoustines} and the {d:beignet} come in pieces, so they share easily. The {d:roastchicken} can be ordered whole.'),
       ('Sides and sauces', 'When a guest orders a main, mention a side. With the steak, mention the sauces: {d:bearnaise}, {d:peppercorn} or {d:holstein}.'),
       ('Changes', 'The Food Bible does not say what can and cannot be changed. Do not promise a change: ask the kitchen first.'),
       ('The Guests tab', 'In Info, the Guests tab lists what guests commonly say and what to offer.'),
     ], quiz=[
       ('A guest wants something light. Which would you offer?', ['{d:tomatosalad}', '{d:reuben}', '{d:steakfrites}', '{d:mash}'], 0, 'The salads and the cold fish plates are the lightest things on the menu.'),
-      ('A table wants something to share while they decide. Offer…', ['{d:gildas}', '{d:lemonpie}', '{d:mash}', '{d:peppercorn}'], 0, 'The Gildas come as two skewers.'),
+      ('A table wants something to share while they decide. Offer…', ['{d:langoustines}', '{d:lemonpie}', '{d:mash}', '{d:peppercorn}'], 0, 'The langoustines come as three, so they share easily.'),
       ('A guest asks whether a dish can be changed. You…', ['Ask the kitchen before promising anything', 'Say yes', 'Say no', 'Offer a different dish straight away'], 0, 'Do not promise a change: ask the kitchen first.'),
       ('How many dishes should you suggest at once?', ['One or two', 'As many as possible', 'The whole section', 'None: let the guest choose'], 0, 'One or two, once you know what the guest wants.'),
     ]),
