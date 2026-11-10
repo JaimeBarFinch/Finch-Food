@@ -55,7 +55,7 @@ IMPLIES = {
     'mustard': r'mustard|dijon',
     'soya': r'soy|soya|miso|tofu|edamame|tamari',
     'sulphites': r'wine|vinegar|sherry|port|marsala|madeira|cider',
-    'nuts': r'nuts?|chestnuts?|almonds?|hazelnuts?|walnuts?|pistachios?|pecans?|cashews?|pesto|praline|frangipane|amaretti|marzipan|nougat',
+    'nuts': r'nuts?|chestnuts?(?! mushroom)|almonds?|hazelnuts?|walnuts?|pistachios?|pecans?|cashews?|pesto|praline|frangipane|amaretti|marzipan|nougat',
     'peanuts': r'peanuts?|satay',
     'sesame': r'sesame|tahini',
     'celery': r'celery|celeriac',
@@ -202,7 +202,7 @@ def build():
     has('caviar', 'service', 'One caviar spoon per table for up to four guests', 'Two spoons')
     has('caviar', 'flag', 'by hand')
     has('potpie', 'flag', '25 minutes')
-    has('potpie', 'plate', 'puff pastry', 'chestnuts')
+    has('potpie', 'plate', 'puff pastry', 'chestnut mushrooms')
     has('artichoke', 'plate', 'walnut mole', 'sesame oil')
     has('souffle', 'making', 'cooked once, then baked again')
     has('steakfrites', 'plate', 'ribeye')

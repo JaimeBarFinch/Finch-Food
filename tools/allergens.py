@@ -24,7 +24,8 @@ SOURCE_DATE = 'November 2026'
 
 A = {
     # ---- bar snacks
-    'caviar': dict(raw='', contains=[], open=True),          # description sheet only: no allergen line
+    'caviar': dict(raw='Fish & Gluten. (Given by Bar Finch on 10 November 2026.)',
+        contains=['fish', 'gluten']),
     # ---- starters
     'reuben': dict(raw='Milk/dairy, sulphites, gluten, egg, mustard.',
                    contains=['milk', 'sulphites', 'gluten', 'eggs', 'mustard']),
@@ -90,11 +91,7 @@ A = {
 #   - if it does not, keep the question's line but start the note with 'KITCHEN CONFIRMED NO:' and the date.
 QUERIES = {
     'caviar': [
-        ('fish', 'Caviar is sturgeon roe.'),
-        ('milk', 'Served with crème fraîche.'),
-    ],
-    'potpie': [
-        ('nuts', 'The filling has chestnuts, and the list given on 10 November 2026 does not mention nuts.'),
+        ('milk', 'Served with crème fraîche, and the list given on 10 November 2026 does not mention milk.'),
     ],
     'steakfrites': [
         ('eggs', 'KITCHEN CONFIRMED NO (10 November 2026): mayonnaise is an extra on request, not part of the dish.'),
